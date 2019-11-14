@@ -1,25 +1,36 @@
-version: "3"
+version: "3.2"
 
 services:
-  superman.heroes.com:
-    container_name: superman.heroes.com
+  superman:
+    container_name: superman
     image: heroesapp:latest
     command: node app.js
     environment:
       - NAME=Superman
-    ports:
-      - "5001:5000"
+    # ports:
+    #   - "5001:5000"
     networks:
       - heroes
 
-  deadpool.heroes.com:
-    container_name: deadpool.heroes.com
+  deadpool:
+    container_name: deadpool
     image: heroesapp:latest
     command: node app.js
     environment:
       - NAME=Deadpool
+    # ports:
+    #   - "5002:5000"
+    networks:
+      - heroes
+
+  www:
+    container_name: www
+    image: heroesloadbalancer:latest
     ports:
-      - "5002:5000"
+      - "3000:8080"
+    depends_on:
+      - superman
+      - deadpool
     networks:
       - heroes
 
