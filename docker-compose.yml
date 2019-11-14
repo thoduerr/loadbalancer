@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  superman.heroes.com:
+    container_name: superman.heroes.com
+    image: heroesapp:latest
+    command: node app.js
+    environment:
+      - NAME=Superman
+    ports:
+      - "5001:5000"
+    networks:
+      - heroes
+
+  deadpool.heroes.com:
+    container_name: deadpool.heroes.com
+    image: heroesapp:latest
+    command: node app.js
+    environment:
+      - NAME=Deadpool
+    ports:
+      - "5002:5000"
+    networks:
+      - heroes
+
+networks:
+  heroes:

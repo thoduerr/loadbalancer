@@ -1,0 +1,28 @@
+{
+  "name": "loadbalancer",
+  "version": "1.0.0",
+  "description": "a simple loadbalancer demo",
+  "main": "app.js",
+  "scripts": {
+    "docker:build": "docker build -t heroesapp:latest .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thoduerr/loadbalancer.git"
+  },
+  "keywords": [
+    "loadbalancer",
+    "nginx",
+    "docker"
+  ],
+  "author": "Thomas Duerr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thoduerr/loadbalancer/issues"
+  },
+  "homepage": "https://github.com/thoduerr/loadbalancer#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
