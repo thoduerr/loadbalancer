@@ -3,7 +3,7 @@
 # build images
 
 ```bash
-$ . ./buildimages.sh
+$ docker-compose build --parallel
 ```
 
 # start
